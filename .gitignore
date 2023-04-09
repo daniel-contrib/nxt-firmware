@@ -2,7 +2,8 @@
 *.lst
 *.sym
 *.elf
+*.bin
+*.rfw
+build/
 tags
 version.mak
-nxt_firmware.bin
-nxt_firmware.rfw
