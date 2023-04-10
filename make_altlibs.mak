@@ -160,7 +160,7 @@ THUMB_C_SOURCES += abort.c errno.c sbrk.c strtod.c sscanf.c
 
 # Additional flags for TARGET = $(TARGET_PICO)
 else ifeq ($(TARGET),$(TARGET_PICO))
-SPECS += --picolibc-prefix=$(3RDPARTYDIR) --specs=$(3RDPARTYDIR)/picolibc/picolibc.specs
+SPECS += --picolibc-prefix=$(3RDPARTYDIR)/picolibc_dist --specs=$(3RDPARTYDIR)/picolibc_dist/picolibc/picolibc.specs
 DEFINES += -DPICOLIBC_FLOAT_PRINTF_SCANF 
 OPTIMIZE += -flto
 THUMB_C_SOURCES += sscanf.c
