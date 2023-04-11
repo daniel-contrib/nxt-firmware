@@ -196,6 +196,11 @@ LIBPATH_FLAGS = $(addprefix -L, $(LIB_PATHS) )
 LIBNAME_FLAGS = $(addprefix -l, $(LIB_NAMES) )
 
 # Additional Flags:
+#  ASFLAGS        Flags passed to the S assembler.
+#  CFLAGS         Flags passed to the C compiler.
+#  CPPFLAGS       Flags passed to the preprocessor.
+#  LDFLAGS        Flags passed to the linker via the compiler.
+#	 LDLIBS         Libary name flags passed to the linker via the compiler.
 #  -g                 Produce debugging information for GDB.
 #  -MMD               Generate .d files alongside each .o file. See the RULES section below, in which all .d files are -included.
 #  -nostdlib          Do not link any of the standard system libraries or startup files.
@@ -203,7 +208,6 @@ LIBNAME_FLAGS = $(addprefix -l, $(LIB_NAMES) )
 #  -Wl,               Pass comma-separated <options> on to the linker.
 #    --gc-sections      Perform a post-compilation garbage collection of unused code and data.
 #    --trace            Print all the files participating in the linking process.
-#
 ASFLAGS = -g $(ARCHFLAGS) $(THUMB) $(THUMBINTERWORK)
 CFLAGS = -g $(ARCHFLAGS) $(THUMB) $(THUMBINTERWORK) $(WARNINGS) $(OPTIMIZE)
 CPPFLAGS = $(INCPATH_FLAGS) $(DEFINES) $(SPECS) -MMD
@@ -272,7 +276,7 @@ $(THUMB_OBJECTS): THUMB = -mthumb
 -include $(SRC_DEPENDS)
 
 
-# Rules for compiling source files
+# Rules for compiling source files into object (.o) files:
 $(C_OBJECTS): $(OBJDIR)/%.o: %.c
 	@printf "\n\nCompiling source file: %s...\n" "$<"
 	$(COMPILE.c) -o $@ $<
