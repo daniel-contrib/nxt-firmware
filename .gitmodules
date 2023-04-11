@@ -1,0 +1,3 @@
+[submodule "3rdparty/picolibc"]
+	path = 3rdparty/picolibc
+	url = https://github.com/keith-packard/picolibc

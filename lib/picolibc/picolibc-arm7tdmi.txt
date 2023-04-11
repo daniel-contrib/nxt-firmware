@@ -1,0 +1,26 @@
+[binaries]
+c = 'arm-none-eabi-gcc'
+ar = 'arm-none-eabi-ar'
+as = 'arm-none-eabi-as'
+nm = 'arm-none-eabi-nm'
+strip = 'arm-none-eabi-strip'
+
+[host_machine]
+system = 'none'
+cpu_family = 'arm'
+cpu = 'arm7tdmi'
+endian = 'little'
+
+[properties]
+skip_sanity_check = true
+
+[built-in options]
+c_args = [
+           '-g',
+           '-mcpu=arm7tdmi',
+           '-mthumb',
+           '-mthumb-interwork',
+           '-Os',
+           '-ffunction-sections',
+           '-fdata-sections'
+         ]
