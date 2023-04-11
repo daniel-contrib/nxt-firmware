@@ -17,8 +17,8 @@
 # Free memory remaining on NXT after fwflash:
 #   LIBC_NEWLIB:   99024 bytes
 #   LIBC_NANO:    125188 bytes
-#   LIBC_PICO:    129504 bytes
-#   LIBC_PICO:    128744 bytes (default settings)
+#   LIBC_PICO:    129504 bytes (local custom build)
+#   LIBC_PICO:    128744 bytes (release build)
 #
 LIBC_NEWLIB = newlib
 LIBC_NANO = nano
